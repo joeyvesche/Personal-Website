@@ -1,0 +1,77 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<br><br><br><hr>
+
+<div class="container">
+  <!-- For each institution - generate a row --> 
+  {% for inst_id, inst in resume_data.items() %}
+  <div class="row">
+    <div class="col-md-6-text-right">
+      <h3>{{ inst['name'] }}</h3>
+      
+      {% if inst['department'] is not none %}
+      <p class="dep">{{ inst['department'] }}</p>
+      {% endif %}
+      <p class="place">
+        {% if inst['address'] is not none %}{{ inst['address'] }}, {% endif %}
+        {% if inst['city'] is not none %}{{ inst['city'] }}, {% endif %}
+        {% if inst['state'] is not none %}{{ inst['state'] }}, {% endif %}
+        {% if inst['zip'] is not none %}{{ inst['zip'] }}{% endif %}
+      </p>
+    </div>
+    <div class="col-md-6">
+      {% if inst['type'] %}<p class="type">{{ inst['type'] }}</p>{% endif %}
+    </div>
+  </div>
+{% if inst['positions'] != {} %}
+{% for pos_id, pos in inst['positions'].items() %}
+{% if pos['title'] %}
+
+<div class="row">
+<div class="col-md-6">
+<h4>{{ pos['title'] }}</h4>
+</div>
+<div class="col-md-6-text-right">
+  <p class="date">
+    {% if pos['start_date'] is not none %}{{ pos['start_date'] }}{% endif %}
+    {% if pos['end_date'] is not none %} - {{ pos['end_date'] }}{% endif %}
+  </p>
+</div>
+</div>
+{% endif %}
+{% if pos['responsibilities'] %}<p class="resp">{{ pos['responsibilities'] }}</p>{% endif %}
+{% if pos['experiences'] != {} %}
+{% for exp_id, exp in pos['experiences'].items() %}
+{% if exp['name'] %}
+
+  <div class="row">
+    <div class="col-md-6">
+      <h5>{% if exp['hyperlink'] %}<a href="{{ exp['hyperlink'] }}">{{ exp['name'] }}</a>{% else %}{{ exp['name'] }}{% endif %}</h5>
+    </div>
+  </div>
+  {% endif %}
+  {% if exp['description'] %}<p>{{ exp['description'] }}</p>{% endif %}
+{% if exp['skills'] != {} %}
+  <div class="row">
+    <div class="col-md-6">
+      <ul>
+        {% for skill_id, skill in exp['skills'].items() %}
+        {% if skill['name'] and skill['skill_level'] %}
+        <p>Skills:</p>
+        <li>{{ skill['name'] }} (Level {{ skill['skill_level'] }})</li>
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  {% endif %}
+{% endfor %}
+{% endif %}
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+
+</div>
+{% endblock %}

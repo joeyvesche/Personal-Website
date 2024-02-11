@@ -1,0 +1,122 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<style> 
+#chat {
+  width: 60%;
+  height: 350px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  resize: none;
+  overflow-y:auto;
+  margin: 0 auto;
+}
+#chat-input{
+    box-sizing: border-box;
+    width: 60%;
+    height: 40px;
+}
+#leave-chat-button{
+    background-color: rgb(155, 155, 155);
+    border-color: rgb(155, 155, 155);
+}
+.right {
+  text-align: right;
+  color: blue;
+}
+.left {
+  text-align: left;
+  color: grey;
+}
+</style>
+{% endblock %}
+
+{% block extrajs %}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.4.2.min.js"></script>
+<script src="https://cdn.socket.io/3.1.1/socket.io.min.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket;
+    $(document).ready(function(){
+        
+        socket = io.connect('https://' + document.domain + ':' + location.port + '/chat');
+        socket.on('connect', function() {
+            socket.emit('joined', {});
+        });
+        
+        socket.on('status', function(data) {     
+            let tag  = document.createElement("p");
+            let text = document.createTextNode(data.msg);
+            let element = document.getElementById("chat");
+            tag.appendChild(text);
+            if (data.user === "owner@email.com") {
+              tag.className = 'right';
+            } else {
+              tag.className = 'left';
+            }
+            element.appendChild(tag);
+            $('#chat').scrollTop($('#chat')[0].scrollHeight);
+        });
+
+        socket.on('message', function(data) {
+            let tag  = document.createElement("p");
+            let text = document.createTextNode(data.user + ": " + data.text);
+            let element = document.getElementById("chat");
+            tag.appendChild(text);
+            if (data.user === "owner@email.com") {
+              tag.className = 'right';
+            } else {
+              tag.className = 'left';
+            }
+            element.appendChild(tag);
+            $('#chat').scrollTop($('#chat')[0].scrollHeight);
+        });
+
+        socket.on('left', function(data) {
+            let tag  = document.createElement("p");
+            let text = document.createTextNode(data.user + " has left the room.");
+            let element = document.getElementById("chat");
+            tag.appendChild(text);
+            if (data.user === "owner@email.com") {
+              tag.className = 'right';
+            } else {
+              tag.className = 'left';
+            }
+            element.appendChild(tag);
+            $('#chat').scrollTop($('#chat')[0].scrollHeight);
+        });
+
+        $("#chat-input").bind("keydown", function(event) {
+            if (event.which === 13) {
+                event.preventDefault();
+                let message = $(this).val();
+                if (message.trim() !== "") {
+                    socket.emit('text', {'text': message});
+                    $(this).val('');
+                }
+            }
+        });
+
+        $("#leave-chat-button").click(function() {
+            socket.emit('left', {});
+            window.location.href = "/home";
+        });
+    });
+</script>
+{% endblock %}
+
+{% block maincontent %}
+<p>Chat</p>
+
+<div id='chat'>    
+</div>
+
+<p class="email">
+<input id="chat-input" placeholder="Enter Your Message Here" />
+</p>
+
+<button id="leave-chat-button" type="button">Leave Chat</button><br><br>
+{% endblock %}

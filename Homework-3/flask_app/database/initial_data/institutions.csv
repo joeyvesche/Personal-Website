@@ -1,0 +1,3 @@
+"inst_id","type","name","department","address","city","state","zip"
+"1","Customer Service","LongHorn Steakhouse",NULL,NULL,"Lansing","Michigan",NULL
+"2","Acdemia","Michigan State University","Computer Science",NULL,"East Lansing","Michigan",NULL

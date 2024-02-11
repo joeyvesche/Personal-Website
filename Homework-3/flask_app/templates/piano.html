@@ -1,0 +1,50 @@
+{% extends 'shared/layout.html' %}
+
+{% block extracss %}
+<link rel="stylesheet" href="{{ url_for('static', filename='piano/css/piano.css') }}">
+{% endblock %}
+
+{% block maincontent %}
+<!-- Creating the Piano-->
+<h4><i> Behold piano great and old, it's master slumbers
+    in far off cold, if you wish to see anew, call out to it - we see you.
+</i><hr></h4>
+
+<div class="piano">
+    <div class ="back">
+        <div id ="white1"><p class="letterw1">A</p></div>
+        <div id ="white2"><p class="letterw2">S</p></div>
+        <div id ="white3"><p class="letterw3">D</p></div>
+        <div id ="white4"><p class="letterw4">F</p></div>
+        <div id ="white5"><p class="letterw5">G</p></div>
+        <div id ="white6"><p class="letterw6">H</p></div>
+        <div id ="white7"><p class="letterw7">J</p></div>
+        <div id ="white8"><p class="letterw8">K</p></div>
+        <div id ="white9"><p class="letterw9">L</p></div>
+        <div id ="white10"><p class="letterw10">;</p></div>
+
+        <div id ="black1"><p class="letterb1">W</p></div>
+        <div id ="black2"><p class="letterb2">E</p></div>
+        <div id ="black3"><p class="letterb3">T</p></div>
+        <div id ="black4"><p class="letterb4">Y</p></div>
+        <div id ="black5"><p class="letterb5">U</p></div>
+        <div id ="black6"><p class="letterb6">O</p></div>
+        <div id ="black7"><p class="letterb7">P</p></div>
+        <div id="old">The Great Old One</div>
+    </div>
+    <div class = "front"> I have awoken.</div>
+</div>
+<!-- Link JavaScript for the piano-->
+
+{% endblock %}
+
+{% block extrajs %}
+<script src="{{ url_for('static', filename='piano/js/piano.js') }}" defer></script>
+{% endblock %}
+
+{% block footcontent %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}
+
+
