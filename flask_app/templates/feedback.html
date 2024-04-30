@@ -1,0 +1,31 @@
+{% extends 'shared/layout.html' %}
+
+{% block maincontent %}
+<table id="feedback-table">
+    <thead>
+        <tr>
+            <th onclick="sortTable(0)">ID</th>
+            <th onclick="sortTable(1)">Name</th>
+            <th onclick="sortTable(2)">Email</th>
+            <th onclick="sortTable(3)">Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for id, feedback in feedback_data.items() %}
+        <tr>
+            <td>{{ id }}</td>
+            <td>{{ feedback['name'] }}</td>
+            <td>{{ feedback['email'] }}</td>
+            <td>{{ feedback['comment'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
+
+
+{% block footcontent %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

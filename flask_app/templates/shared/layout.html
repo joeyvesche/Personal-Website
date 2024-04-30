@@ -1,0 +1,112 @@
+<!-- FILL ME IN WITH CODE FOR YOUR PAGE LAYOUT -->
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joey Vesche's personal page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/header.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/navbar.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/footer.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/main.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main/css/resume.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='main/images/favicon.ico') }}">
+  {% block extracss %}{% endblock %}
+  <script src="{{ url_for('static', filename='main/js/main.js') }}" defer></script>
+  {% block extrajs %}{% endblock %}
+</head>
+
+<header class="banner">
+  <title> Homework-2</title>
+</header>
+
+<body>
+
+    <!-- The navigation bar -->
+    <nav>
+      <!-- Header/Nav bar-->
+      <div class = "header">
+          <nav>
+              <div class = "flexcon">
+                  {% if session.email %}
+                    <p class = "hw1" style="color:white">Welcome {{ user }}</p>
+                  {% else %}
+                  <p class = "hw1" style="color:white">CSE 477 - Homework 3</p>
+                  {% endif %}
+
+                  <ul class="main-nav">
+                      <li><a href="/home">Home</a></li>
+                      <li><a href="../projects">Projects</a></li>
+                      <li><a href="/resume">Resume</a></li>
+                      <li><a href="/chat">Chat</a></li>
+                      {% if session.email %}
+                          <li><a href="/logout">Logout</a></li>
+                      {% else %}
+                          <li><a href="/login">Login</a></li>
+                      {% endif %}
+
+                      <li class="linkedin"><a href="https://www.linkedin.com/in/joey-vesche/"><img src="../static/main/images/social-linkedin.png" width="40" height="40"></a></li>
+                  </ul>
+              </div>
+          <nav>
+      </div>
+
+      <section class = "p-menu1">
+        <nav id="navbar" class="navigation" role="navigation">
+            <input id="toggle1" type="checkbox" />
+            <label class="hamburger1" for="toggle1">
+              <div class="top"></div>
+              <div class="meat"></div>
+              <div class="bottom"></div>
+            </label>
+            <div class = "hw">CSE 477 - Homework 1</div>
+            <nav class="menu1">
+                <a class="link1" href="/home">Home</a>
+                <a class="link1" href="/projects">Projects</a>
+                <a class="link1" href="/resume">Resume</a>
+                <a class="link1" href="/chat">Chat</a>
+                {% if session.email %}
+                  <a class="link1" href="/logout">Logout</a>
+                {% else %}
+                  <a class="link1" href="/login">Login</a>
+                {% endif %}
+                <a class="link1" href="https://www.linkedin.com/in/joey-vesche/">Linkedin</a>
+              </nav>
+            
+    </section>
+  </nav>
+  
+  <button id="feedback-button" onclick="toggleFeedback()">Feedback</button>
+
+
+    <!-- The main content  -->
+    <main>
+
+      <div id="feedback-form" class="hidden">
+        <form action="{{ url_for('processfeedback') }}" method="POST" enctype="multipart/form-data">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name"><br>
+      
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" size="40"><br>
+      
+          <label for="comment">Comment:</label>
+          <textarea id="comment" name="comment"></textarea><br>
+      
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      {% block maincontent %}{% endblock %}
+    </main>
+
+    <!-- The footer of the file -->
+    <footer>
+      {% block footcontent %}{% endblock %}
+        <p1 style="text-align:center; color:rgb(181, 181, 181); padding:30px; font-size: 20px;">© 2023 Joseph Vesche</p1>
+    </footer>
+
+    </article>
+  
+</body>
+
+</html>

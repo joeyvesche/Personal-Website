@@ -1,0 +1,537 @@
+div{
+  box-sizing: border-box;
+}
+
+.piano{
+  display: flex;
+  justify-content: center;
+}
+
+/* Background of the piano */
+.back{
+  z-index: 1;
+  position: absolute;
+  width:600px;
+  height:500px;
+
+  border: 5px solid black;
+  background-color: rgb(55, 55, 55);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+}
+/* First white key */
+#white1{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 4%;
+  top: 41%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  color:white;
+  
+}
+.letterw1{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+/* Second white key */
+#white2{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 13%;
+  top: -19%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+  
+}
+.letterw2{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Third white key */
+#white3{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 22%;
+  top: -79%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+  
+}
+.letterw3{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Fourth white key */
+#white4{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 31%;
+  top: -139%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+  
+}
+.letterw4{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Fifth white key */
+#white5{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 40%;
+  top: -199%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+  
+}
+.letterw5{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Sixth white key */
+#white6{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 49%;
+  top: -259%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+  
+}
+.letterw6{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Seventh white key */
+#white7{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 58%;
+  top: -319%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+  
+}
+.letterw7{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Eighth white key */
+#white8{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 67%;
+  top: -379%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+}
+.letterw8{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Ninth white key */
+#white9{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 76%;
+  top: -439%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+}
+.letterw9{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Tenth white key */
+#white10{
+  z-index: 2;
+  position: relative;
+  width: 9%;
+  height: 60%;
+  left: 85%;
+  top: -499%;
+  border: 5px solid black;
+  background-color: white;
+  border-radius: 10px;
+  text-align: center;
+  color:white;
+}
+.letterw10{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* First black key */
+#black1{
+  z-index: 3;
+  position: relative;
+  width: 7%;
+  height: 40%;
+  left: 10%;
+  top: -559%;
+  border: 5px solid black;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  color:black;
+}
+.letterb1{
+  position: absolute;
+  left: 20%;
+  bottom:0;
+}
+
+/* Second black key */
+#black2{
+  z-index: 3;
+  position: relative;
+  width: 7%;
+  height: 40%;
+  left: 19%;
+  top: -599%;
+  border: 5px solid black;
+  background-color: black;
+  border-radius: 10px;
+  color:black;
+}
+.letterb2{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Third black key */
+#black3{
+  z-index: 3;
+  position: relative;
+  width: 7%;
+  height: 40%;
+  left: 36.5%;
+  top: -639%;
+  border: 5px solid black;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  color:black;
+}
+.letterb3{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Fourth black key */
+#black4{
+  z-index: 3;
+  position: relative;
+  width: 7%;
+  height: 40%;
+  left: 46%;
+  top: -679%;
+  border: 5px solid black;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  color:black;
+}
+.letterb4{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Fifth black key */
+#black5{
+  z-index: 3;
+  position: relative;
+  width: 7%;
+  height: 40%;
+  left: 55%;
+  top: -719%;
+  border: 5px solid black;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  color:black;
+}
+.letterb5{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Sixth black key */
+#black6{
+  z-index: 3;
+  position: relative;
+  width: 7%;
+  height: 40%;
+  left: 72.5%;
+  top: -759%;
+  border: 5px solid black;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  color:black;
+}
+.letterb6{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* Seventh black key */
+#black7{
+  z-index: 3;
+  position: relative;
+  width: 7%;
+  height: 40%;
+  left: 81.5%;
+  top: -799%;
+  border: 5px solid black;
+  background-color: black;
+  border-radius: 10px;
+  text-align: center;
+  color:black;
+}
+.letterb7{
+  position: absolute;
+  left: 35%;
+  bottom:0;
+}
+
+/* piano text*/
+#old{
+  z-index: 3;
+  position: relative;
+  color:white;
+  text-align: center;
+  font-family: "Gabriola",Times, serif ;
+  font-size: 300%;
+  top: -870%;
+}
+
+/* New image that shows up */
+.front.show{
+  z-index: 1;
+  opacity: 1;
+}
+
+.front{
+  z-index: 0;
+  position: absolute;
+  width:600px;
+  height:500px;
+  opacity: 0;
+  background-position: center;
+  border: 5px solid black;
+  background-image: url(../images/texture.jpeg);
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  color:white;
+  text-align: center;
+  font-family: "Gabriola",Times, serif ;
+  font-size: 300%;
+
+}
+
+.imageWrapper{
+  position: relative;
+  height: 500px;
+  width: 550px;
+  left: 0;
+  right: 0;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.imageWrapper > .bgimg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  opacity: 1ww;
+  border-radius: 69px 69px 0px 0px;
+  transition:  opacity 3s ease-out;
+}
+
+.imageWrapper > .bkgdc {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  border-radius: 69px 69px 0px 0px;
+  background-color: #24292f;
+  transition:  opacity 3s ease-out;
+}
+
+.imageWrapper > p {
+  font-family: Trattatello, fantasy;
+  font-size: 32px; 
+  position: relative;
+  color: white;
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  z-index: 1;
+  text-align: center;
+  top: 50px;
+}
+
+
+.keys {
+  position: absolute;
+  display: block;
+  width: 500px;
+  height: 300px;
+  cursor: none;
+  padding: 0px;
+  opacity: 1;
+  bottom: 0px;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  margin-left:auto;
+  margin-right:auto;
+
+}
+
+.key {
+  position: relative;
+  border: 4px solid black;
+  border-radius: .5rem;
+  transition: all .1s ease;
+  display: block;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.key:not(.sharp) {
+  float: left;
+  width: 10%;
+  height: 100%;
+  background: rgba(255, 255, 255, .8);    
+}
+
+.key.sharp {
+  position: absolute;
+  width: 6%;
+  height: 60%;
+  background: #000;
+  color: #eee;
+  top: 0;
+  z-index: 3;
+}
+
+.key[data-key="87"] {
+  left: 7%;
+}
+
+.key[data-key="69"] {
+  left: 17%;
+}
+
+.key[data-key="84"]  {
+  left: 37%;
+}
+
+.key[data-key="89"] {
+  left: 47%;
+}
+
+.key[data-key="85"] {
+  left: 57%;    
+}
+
+.key[data-key="79"] {
+  left: 77%;    
+}
+
+.key[data-key="80"] {
+  left: 87%;    
+}
+
+.playing {
+  transform: scale(.95);
+  box-shadow: 0 0 1rem;
+}
+
+.hints {
+  display: block;
+  width: 100%;
+  opacity: 0;
+  position: absolute;
+  bottom: 7px;
+  transition: opacity .3s ease-out;
+  font-size: 20px;
+  text-align: center;
+}
+
+.keys:hover .hints {
+  opacity: 1;
+}

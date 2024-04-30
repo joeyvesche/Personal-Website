@@ -1,0 +1,58 @@
+.place{
+    position: relative;
+    vertical-align: middle;
+    text-align: right;
+    font-size:1em;
+    bottom: 150px;
+}
+
+
+.date{
+    position: relative;
+    vertical-align: middle;
+    text-align: right;
+    top:-24em;
+    font-size:1em;
+}
+
+.type{
+    position: relative;
+    vertical-align: middle;
+    text-align: left;
+    font-size:1em;
+    top:-10em;
+
+}
+
+h3{
+    position: relative;
+    bottom: 90px;
+}
+
+h4{
+    position: relative;
+    text-align: left;
+    bottom: 100px;
+    top:-15em;
+}
+
+.resp{
+    position: relative;
+    text-align: right;
+    font-size: 1em;
+    left:200px;
+    width: 600px;
+    bottom: 300px;
+}
+
+.dep{
+    position: relative;
+    bottom:2em;
+    text-align: left;
+}
+
+h5{
+    position: relative;
+    bottom: 16em;
+    font-size:1em;
+}
